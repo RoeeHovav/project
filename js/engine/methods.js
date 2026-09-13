@@ -549,7 +549,7 @@
       if (/ascii/.test(enc)) {
         for (var i = 0; i < self.b.length; i++) {
           if (self.b[i] > 127) {
-            if (errors === 'replace') return bstr(self).replace(/[\x80-\xff]/g, '�');
+            if (errors === 'replace') return bstr(self).replace(/[\x80-\xff]/g, '\ufffd');
             if (errors === 'ignore') return bstr(self).replace(/[\x80-\xff]/g, '');
             it.throwPy('UnicodeDecodeError', "'ascii' codec can't decode byte 0x" + self.b[i].toString(16) +
               ' in position ' + i + ': ordinal not in range(128)');

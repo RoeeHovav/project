@@ -61,17 +61,17 @@
       else if ((b0 & 0xf0) === 0xe0) { n = 2; cp = b0 & 15; }
       else if ((b0 & 0xf8) === 0xf0) { n = 3; cp = b0 & 7; }
       else {
-        if (errors === 'replace') { out += '�'; i++; continue; }
+        if (errors === 'replace') { out += '\ufffd'; i++; continue; }
         if (errors === 'ignore') { i++; continue; }
         if (interp) interp.throwPy('UnicodeDecodeError',
           "'utf-8' codec can't decode byte 0x" + b0.toString(16) + ' in position ' + i + ': invalid start byte');
-        out += '�'; i++; continue;
+        out += '\ufffd'; i++; continue;
       }
       if (i + n >= bytes.length + 0 && i + n > bytes.length - 1) {
-        if (errors === 'replace') { out += '�'; i++; continue; }
+        if (errors === 'replace') { out += '\ufffd'; i++; continue; }
         if (errors === 'ignore') { i++; continue; }
         if (interp) interp.throwPy('UnicodeDecodeError', "'utf-8' codec can't decode bytes: unexpected end of data");
-        out += '�'; break;
+        out += '\ufffd'; break;
       }
       var ok = true;
       for (var k = 1; k <= n; k++) {
@@ -80,10 +80,10 @@
         cp = (cp << 6) | (bx & 63);
       }
       if (!ok) {
-        if (errors === 'replace') { out += '�'; i++; continue; }
+        if (errors === 'replace') { out += '\ufffd'; i++; continue; }
         if (errors === 'ignore') { i++; continue; }
         if (interp) interp.throwPy('UnicodeDecodeError', "'utf-8' codec can't decode byte 0x" + b0.toString(16) + ' in position ' + i + ': invalid continuation byte');
-        out += '�'; i++; continue;
+        out += '\ufffd'; i++; continue;
       }
       out += String.fromCodePoint(cp);
       i += n + 1;
