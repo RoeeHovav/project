@@ -1,0 +1,41 @@
+203.0.113.7 203.0.113.7 59 70 (59, 70)
+['2026', '01', '05', '12', '44', '01', '203', '0', '113', '7', '5']
+[('user', 'admin'), ('attempts', '5')]
+2026-01-05 12:44:01 WARN  Failed login for user=admin from [REDACTED] attempts=5
+['a', 'b   c']
+True True
+user=(\w+) admin
+['WARN']
+a\.b\*c
+corp at alice corp at bob
+a#b##
+ok@example.com True
+bad@@x False
+a.b+c@sub.domain.org True
+['one', 'two']
+a
+c
+555-1234
+{"user": "admin", "roles": ["a", "b"], "active": true, "score": 9.5, "meta": null, "n": 42}
+{"active": true, "meta": null, "n": 42, "roles": ["a", "b"], "score": 9.5, "user": "admin"}
+{
+  "x": [
+    1,
+    2
+  ]
+}
+admin ['a', 'b'] 42 int None
+[1, 2.5, 'x', None, True]
+the quick brown fox
+jumps over the lazy
+dog
+the quick [...]
+'a\nb'
+b'\x00\x12\xd6\x87\x00PHTTP' 0012d687005048545450
+(1234567, 80, b'HTTP')
+16 feff
+2026-03-14T15:09:26 2026 3 14 15
+2026/03/14 15:09:26 Saturday
+2026-03-17T21:09:26 280800.0
+2026-01-01 59
+2026-05-06T07:08:09
